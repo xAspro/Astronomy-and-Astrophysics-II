@@ -7,16 +7,16 @@ alpha = 0.3
 sigma = 0.5
 
 def I_nu(r):
-    return I_nu_0 * np.exp(- (alpha + sigma) * (r ** 3) / 3)
+    return I_nu_0*np.exp(-(alpha+sigma)*(r**3)/3)
 
 def I_nu2(r):
-    return I_nu_0 * np.exp(- (alpha + sigma) * (r*np.log(r)-r)) 
+    return I_nu_0*np.exp(-(alpha+sigma)*(r*np.log(r)-r)) 
 
 def tau_nu(r):
-    return - (alpha + sigma) * (r ** 3) / 3
+    return (alpha+sigma)*(r**3)/3
 
 def tau_nu2(r):
-    return - (alpha + sigma) * (r*np.log(r)-r)
+    return (alpha+sigma)*(r*np.log(r)-r)
 
 r_values = np.linspace(0.1 * L, L, 100)
 
