@@ -12,7 +12,7 @@ def sigma(w,w0,tau,sigmaT=6.652e-29):
 w=np.linspace(w0/10000,100*w0,100000)
 
 tau=1/(100*w0)
-opticalDepth=sigma(w,w0,tau)*ni*1
+opticalDepth=sigma(w,w0,tau)*ni*1 #1 because 1 meter
 
 plt.plot(w,opticalDepth,'o-')
 plt.plot(w,np.zeros(len(w)),'r-')

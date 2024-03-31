@@ -3,20 +3,21 @@ import matplotlib.pyplot as plt
 
 
 #Constants
-e=1.60217662e-19
-h=6.62607015e-34
+e=1.602e-19
+h=6.626e-34
 c=3e8
-k=1.380649e-23 
+k=1.381e-23 
 m=9.109e-31
 
 #defining variables
 w0=2.47e15 #Lyman Alpha line for hydrogen
 ni=50e-6
 ne=ni
+geff=1   #Gaunt factor
 
 def alpha(nu,T,Z,ne,ni):
-    G=1   #Gaunt factor
-    return (4*e**6/(3*m*h*c))*G*((2*np.pi)/(3*k*m))**0.5*(1/(T**0.5))*(Z**2*ne*ni/nu**3)*(1-np.exp(-h*nu/(k*T)))
+
+    return (4*e**6/(3*m*h*c))*geff*((2*np.pi)/(3*k*m))**0.5*(1/(T**0.5))*(Z**2*ne*ni/nu**3)*(1-np.exp(-h*nu/(k*T)))
 
 nu=np.linspace(10e8,10e15,1000) 
 temperatures=[1000,1e5] 
